@@ -17,7 +17,7 @@ public final class DIComponentBuilder<Impl> {
     self.resolver = container.resolver
     componentContainer.insert(TypeKey(by: unwrapType(Impl.self)), component)
 
-    #if os(iOS) || os(tvOS)
+    #if os(iOS) || os(tvOS) || os(iOSMac)
       useInjectIntoSubviewComponent()
     #endif
   }
